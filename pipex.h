@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 21:21:19 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/14 12:12:28 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/14 14:33:39 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct pip
 	char	*link1;
 	char	*link2;
 	char	**cmd;
-} t_data;
+}	t_data;
 
 typedef struct pipex{
 	int		fd[2];
@@ -39,8 +39,8 @@ typedef struct pipex{
 }	t_pp;
 ///STRUCT////////////////////////////
 
-char	**path_cm2(char **av, char **env, t_pp pp);
-char	**path_cm1(char **av, char **env, t_pp pp);
+void	path_cm2(char **av, char **env, t_pp pp);
+void	path_cm1(char **av, char **env, t_pp pp);
 char	**path_split(char **env);
 
 ///LIBFT////////////////////////////

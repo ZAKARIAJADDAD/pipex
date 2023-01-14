@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 23:03:07 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/14 02:11:13 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/14 14:14:34 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,3 @@ char	*ft_strdup(const char *s1)
 	plloc[j] = '\0';
 	return (plloc);
 }
-
