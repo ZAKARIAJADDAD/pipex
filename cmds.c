@@ -34,8 +34,6 @@ char	**path_cm1(char **av, char **env, t_pp pp)
 			pp.p_data.link2 = ft_strjoin(pp.p_data.link1, av[2]);
 			if (access(pp.p_data.link2, X_OK) == 0)
 				execve(pp.p_data.link2, pp.p_data.cmd, env);
-			// free(pp.p_data.link1);
-			// free(pp.p_data.link2);
 			i++;
 		}
 	}
@@ -64,8 +62,6 @@ char	**path_cm2(char **av, char **env, t_pp pp)
 			pp.p_data.link2 = ft_strjoin(pp.p_data.link1, av[3]);
 			if (access(pp.p_data.link2, X_OK) == 0)
 				execve(pp.p_data.link2, pp.p_data.cmd, env);
-			// free(pp.p_data.link1);
-			// free(pp.p_data.link2);
 			i++;
 		}
 	}
