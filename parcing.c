@@ -6,7 +6,7 @@
 /*   By: zjaddad <zjaddad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:44:50 by zjaddad           #+#    #+#             */
-/*   Updated: 2023/01/14 02:20:45 by zjaddad          ###   ########.fr       */
+/*   Updated: 2023/01/14 12:10:10 by zjaddad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,34 +30,4 @@ char	**path_split(char **env)
 		i++;
 	}
 	return (pt);
-}
-
-char	**path(char **av, char **env, t_pp pp)
-{
-	int		i;
-	char	**s_path;
-
-	s_path = path_split(env);
-	pp.p_data.cmd = ft_split(av[pp.av_x], ' ');
-	if (av[pp.av_x][0] == '/')
-	{
-		execve(av[pp.av_x], pp.p_data.cmd, env);
-		perror("Error");
-		exit(1);
-	}
-	if (s_path)
-	{
-		i = 0;
-		while (s_path[i])
-		{
-			pp.p_data.link1 = ft_strjoin(s_path[i], "/");
-			pp.p_data.link2 = ft_strjoin(pp.p_data.link1, av[pp.av_x]);
-			if (access(pp.p_data.link2, X_OK) == 0)
-				execve(pp.p_data.link2, pp.p_data.cmd, env);
-			// free(pp.p_data.link1);
-			// free(pp.p_data.link2);
-			i++;
-		}
-	}
-	return (s_path);
 }
